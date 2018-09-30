@@ -8,7 +8,7 @@ In this project we are going to do seismic pattern detection for Colombia, using
 
 Click [here](http://portafolio.davidruiz.xyz/index.html) to watch the DEMO.
 
-###Install
+### Install
 You can use this project, just need to clone this repository:
 
 ```
