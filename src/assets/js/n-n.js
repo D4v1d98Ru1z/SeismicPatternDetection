@@ -1,23 +1,24 @@
 const brain = require("brain.js");
 const network = new brain.NeuralNetwork();
-
+//0-70 strong
+//71->180 soft
 network.train([
-    {input: {magnitud: 2.0, deep: 149}, output: {soft: 1}},
-    {input: {magnitud: 2.8, deep: 117}, output: {soft: 1}},
-    {input: {magnitud: 3.0, deep: 150}, output: {soft: 1}},
-    {input: {magnitud: 3.8, deep: 0}, output: {strong: 1}},
-    {input: {magnitud: 4.0, deep: 79}, output: {strong: 1}},
-    {input: {magnitud: 3.1, deep: 145}, output: {soft: 1}},      
-    {input: {magnitud: 3.2, deep: 108}, output: {soft: 1}},
-    {input: {magnitud: 6.0, deep: 30}, output: {strong: 1}},
-    {input: {magnitud: 7.9, deep: 45}, output: {strong: 1}},      
-    {input: {magnitud: 4.1, deep: 0}, output: {strong: 1}},      
-    {input: {magnitud: 3.4, deep: 0}, output: {strong: 1}},
-    {input: {magnitud: 6.3, deep: 49}, output: {strong: 1}},
-    {input: {magnitud: 2.9, deep: 168}, output: {soft: 1}}
-      
+    {input: {magnitude: 2.0, depth: 149}, output: {soft: 1}},
+    {input: {magnitude: 2.8, depth: 117}, output: {soft: 1}},
+    {input: {magnitude: 3.0, depth: 150}, output: {soft: 1}},
+    {input: {magnitude: 3.8, depth: 0}, output: {strong: 1}},
+    {input: {magnitude: 4.0, depth: 79}, output: {soft: 1}},
+    {input: {magnitude: 3.1, depth: 145}, output: {soft: 1}},      
+    {input: {magnitude: 3.2, depth: 108}, output: {soft: 1}},
+    {input: {magnitude: 6.0, depth: 30}, output: {strong: 1}},
+    {input: {magnitude: 7.9, depth: 45}, output: {strong: 1}},      
+    {input: {magnitude: 4.1, depth: 0}, output: {strong: 1}},      
+    {input: {magnitude: 3.4, depth: 155}, output: {soft: 1}},
+    {input: {magnitude: 6.3, depth: 49}, output: {strong: 1}},
+    {input: {magnitude: 2.9, depth: 168}, output: {soft: 1}},
+    {input: {magnitude: 2.3, depth: 0}, output: {strong: 1}}
 ]);
 
-var seismic = {magnitud: 8.0, deep: 50};
+var seismic = {magnitude: 2.6, depth: 144};
 const result = network.run(seismic);
 console.log(result);
