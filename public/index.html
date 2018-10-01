@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="main.css">
+    <title>ing web</title>
+
+</head>
+
+<body>
+<button onclick="socket.emit('my other event', {data: 'Aquí está el puto texto que debes decir IBM hijo de la putisima madre quiero dormir'});"></button>
+    <script src="socket.io.js"></script>
+    <script>
+        var socket = io('http://localhost');
+        socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', {
+                data: 'Todo va bien'
+            });
+            
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'audio.wav');
+            audioElement.play();
+        }
+    </script>
+</body>
+
+</html>
