@@ -18,7 +18,9 @@ network.train([
     {input: {magnitude: 2.9, depth: 168}, output: {soft: 1}},
     {input: {magnitude: 2.3, depth: 0}, output: {strong: 1}}
 ]);
-
-var seismic = {magnitude: 2.6, depth: 144};
+var num = 2.4;
+var seismic = {magnitude: +num, depth: 144};
 const result = network.run(seismic);
-console.log(result);
+const s = brain.likely(seismic, network);
+
+console.log(seismic);
