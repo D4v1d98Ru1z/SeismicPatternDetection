@@ -135,7 +135,7 @@
     <script src="socket.io.js"></script>
     <script src="droppler/js/jquery.js"></script>
     <script>
-        var socket = io('http://localhost');
+var socket = io('http://localhost:12543');
         socket.on('news', function (data) {
             console.log(data);
             if (data.estado == 'ok') {

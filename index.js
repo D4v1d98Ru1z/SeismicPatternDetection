@@ -5,7 +5,8 @@ const PORT = process.env.PORT || 5000
 var TextToSpeechV1 = require('watson-developer-cloud/text-to-speech/v1');
 var fs = require('fs');
 var io = require("socket.io");
-io = io.listen(80);
+io = io.listen(12543);
+var AssistantV1 = require('watson-developer-cloud/assistant/v1');
 
 io.sockets.on('connection', function (socket) {
   socket.on('my other event', function (data) {
@@ -35,7 +36,30 @@ io.sockets.on('connection', function (socket) {
 
       });
   });
+  
 });
+var assistant = new AssistantV1({
+  username: '47048b1f-c2e0-468f-aed8-dc1f6d298a7f',
+  password: '8PCRpSVpHJeb',
+  url: 'https://gateway.watsonplatform.net/assistant/api/',
+  version: '2018-02-16'
+});
+
+assistant.message({
+    input: {
+      text: "Hello"
+    },
+    workspace_id: '84b152e9-ef32-47c7-90b3-f51e87e322bf'
+  },
+  function (err, response) {
+    if (err) {
+      console.error(err);
+    } else {
+    //  io.socket.emit('news', {mensaje: response.input.text, respuesta: response.output.text});
+      console.log(JSON.stringify(response, null, 2));
+    }
+  }
+);
 /*
 // initiate socket.io server 
 io.sockets.on('connection', function (socket) {
