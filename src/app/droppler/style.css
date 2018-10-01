@@ -368,9 +368,15 @@ ul.slides li img
 
 /* BLOG */
 
-#post-1
-{
-    background-image: url("demo-images/one_drop_home_image01-1024x403.png");
+
+
+#Iavid{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    background-position: center;
 }
 
 #post-2
