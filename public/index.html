@@ -8,17 +8,29 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="main.css">
     <title>ing web</title>
+
 </head>
 
 <body>
-
+<button onclick="socket.emit('my other event', {data: 'Aquí está el puto texto que debes decir IBM hijo de la putisima madre quiero dormir'});"></button>
+    <script src="socket.io.js"></script>
     <script>
-        window.onload=function(){
-                var audioElement = document.createElement('audio');
-                audioElement.setAttribute('src', 'audio.wav');
-                audioElement.play();
+        var socket = io('http://localhost');
+        socket.on('news', function (data) {
+            console.log(data);
+            socket.emit('my other event', {
+                data: 'Todo va bien'
+            });
+            
+        });
+    </script>
+    <script>
+        window.onload = function () {
+            var audioElement = document.createElement('audio');
+            audioElement.setAttribute('src', 'audio.wav');
+            audioElement.play();
         }
-        </script>
+    </script>
 </body>
 
 </html>
