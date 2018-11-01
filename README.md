@@ -1,4 +1,4 @@
-# Seismic Pattern Detection
+# SOLUCIÓN INGENIERÍA DEL CONOCIMIENTO
 
 ## About
 
