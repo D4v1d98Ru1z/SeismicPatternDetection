@@ -1,0 +1,1 @@
+Para que el niño se asuste se requiere que 3 bits sean iguales al recuerdo, pero adicional se esta determinando mediante la red neuronal a cual recuerdo pertenece el animal.
